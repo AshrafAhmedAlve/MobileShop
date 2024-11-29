@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #ff6600; /* Orange color */
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        header .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        header .nav-links a:hover {
+            color: #ffe6cc; /* Light orange on hover */
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #ff6600;
+            color: #fff;
+        }
+        
+        .footer h5, .footer h6 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .footer a {
+            color: #ffe6cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #ffd1a3;
+            text-decoration: underline;
+        }
+        
+        .footer-bottom {
+            background-color: #cc5200;
+        }
+        
+        .payment-icons img {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+
+        /* Category Section Styling */
+        .categories {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .categories h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .category-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-category {
+            text-decoration: none;
+            background-color: #ff6600; /* Orange color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-category:hover {
+            background-color: #cc5200; /* Darker orange */
+            transform: scale(1.05);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .categories .category-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Search Bar Styling */
+.input-group {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-group .form-control:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+.input-group .btn-primary {
+    background-color: #ff6600;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.input-group .btn-primary:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center">
+        <div class="logo">Mobile Shop</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/cart/" class="btn btn-light btn-sm text-dark">Cart</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+   <!-- Footer -->
+<footer class="footer">
+    <div class="container py-4">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+                <h5 class="text-white">Mobile Shop</h5>
+                <p class="text-light">
+                    Mobile Shop is your go-to platform for the latest and most trusted mobile devices and accessories.
+                </p>
+                <p class="text-light">
+                    Corporate Office: 425, RD 5, Toronto, Canada
+                </p>
+                <p class="text-light">Phone: +880123456789</p>
+                <p class="text-light">Email: support@mobileshop.com</p>
+            </div>
+            <!-- Information Links -->
+            <div class="col-md-2">
+                <h6 class="text-white">INFORMATION</h6>
+                <ul class="list-unstyled text-light">
+                    <li><a href="/about/" class="text-light text-decoration-none">About Us</a></li>
+                    <li><a href="/contact/" class="text-light text-decoration-none">Contact Us</a></li>
+                    <li><a href="/faq/" class="text-light text-decoration-none">FAQ</a></li>
+                    <li><a href="/blog/" class="text-light text-decoration-none">Blog</a></li>
+                </ul>
+            </div>
+            <!-- Customer Service Links -->
+            <div class="col-md-3">
+                <h6 class="text-white">CUSTOMER SERVICES</h6>
+                <ul class="list-unstyled text-light">
+                    <li><a href="/order-guide/" class="text-light text-decoration-none">How to Place an Order</a></li>
+                    <li><a href="/terms/" class="text-light text-decoration-none">Terms & Conditions</a></li>
+                    <li><a href="/returns/" class="text-light text-decoration-none">Return & Refund Policy</a></li>
+                </ul>
+            </div>
+            <!-- My Account Links -->
+            <div class="col-md-3">
+                <h6 class="text-white">MY ACCOUNT</h6>
+                <ul class="list-unstyled text-light">
+                    <li><a href="/my-account/" class="text-light text-decoration-none">My Account</a></li>
+                    <li><a href="/orders/" class="text-light text-decoration-none">Order History</a></li>
+                    <li><a href="/cart/" class="text-light text-decoration-none">My Cart</a></li>
+                    <li><a href="/wishlist/" class="text-light text-decoration-none">Wishlist</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom text-center py-3" style="background-color: #e65c00;">
+        <p class="mb-0 text-white">2024 Mobile Shop - All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
